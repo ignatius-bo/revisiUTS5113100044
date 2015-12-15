@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package revisi;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Inya
+ */
+public class REVISI {
+
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket("10.151.43.147", 6666);
+        
+        InputStream is = socket.getInputStream();
+        OutputStream os = socket.getOutputStream();
+        
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String test = input.readLine();
+        System.out.println(test);
+        String soal = input.readLine();
+        System.out.println(soal);
+        
+        String ii ;
+        Scanner input_user = new Scanner(System.in);
+        ii = input_user.nextLine ();
+        String request = "Username:"+ ii + "\n" ;
+       
+        writer.write(request);
+        writer.flush();
+        
+        test = input.readLine();
+        System.out.println(test);
+        soal = input.readLine();
+        System.out.println(soal);
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}
