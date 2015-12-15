@@ -50,32 +50,24 @@ public class REVISI {
         
             while (true){
                 String split[] = soal.split(" ");
-                System.out.println(split[0]);
-                System.out.println(split[1]);
-                System.out.println(split[2]);
 
                 int angka1 = Integer.parseInt(split[0]);
                 int angka2 = Integer.parseInt(split[2]);
                 int hasil = 0;
 
                 if(split[1].equals("+")){
-                    System.out.println("masuk +");
                     hasil = angka1 + angka2;        
                 }
                 else if(split[1].equals("-")){
-                    System.out.println("masuk -");
                     hasil = angka1 - angka2;        
                 }
                 else if(split[1].equals("x")){
-                    System.out.println("masuk x");
                     hasil = angka1 * angka2;        
                 }
                 else if(split[1].equals("mod")){
-                    System.out.println("masuk mod");
                     hasil = angka1 % angka2;        
                 }
-
-                System.out.println(hasil);
+                
                 String jawab = "Result:" + hasil + "\n";
                 System.out.println(jawab);
                 writer.write(jawab);
